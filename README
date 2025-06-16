@@ -1,0 +1,25 @@
+
+# Heart Disease Prediction Web App
+
+A Flask-based web application that predicts heart disease risk using machine learning. Users can input their health metrics through a simple web interface and receive an immediate prediction about their heart disease risk.
+
+## Getting Started
+
+To get a copy of this project on your local machine:
+
+1. Clone the repository:
+```bash
+git clone https://github.com/JohnEvansOkyere/Flask-App-HearDiseasesPrediction-.git
+Navigate to the project directory:
+
+bash
+cd Flask-App-HearDiseasesPrediction-
+The project contains:
+
+Flask backend (Python)
+
+HTML/CSS frontend
+
+Pre-trained machine learning model
+
+Sample heart disease dataset
