@@ -4,16 +4,34 @@ const API_URL = 'http://localhost:5000';
 
 export const predictHeartDisease = async (data) => {
   try {
+    // Transform the data to match backend expectations
+    const transformedData = {
+      age: data.age,
+      sex: data.sex,
+      chest_pain_type: data.cp,
+      resting_blood_pressure: data.trestbps,
+      cholesterol: data.chol,
+      fasting_blood_sugar: data.fbs,
+      resting_ecg: data.restecg,
+      max_heart_rate: data.thalach,
+      exercise_angina: data.exang,
+      st_depression: data.oldpeak,
+      st_slope: data.slope,
+      number_of_vessels: data.ca,
+      thalassemia: data.thal
+    };
+
     const response = await fetch(`${API_URL}/api/predict`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(transformedData),
     });
 
     if (!response.ok) {
-      throw new Error('Failed to get prediction');
+      const errorData = await response.json();
+      throw new Error(errorData.error || 'Failed to get prediction');
     }
 
     return await response.json();
