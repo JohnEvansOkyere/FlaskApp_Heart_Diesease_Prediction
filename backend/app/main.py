@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from .models.schemas import HeartDiseaseInput, HeartDiseaseResponse
 from .models.predictor import HeartDiseasePredictor
+import pandas as pd
 
 app = FastAPI(
     title="Heart Disease Prediction API",
@@ -56,4 +57,6 @@ async def predict(input_data: HeartDiseaseInput):
         )
         
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e)) 
+        raise HTTPException(status_code=500, detail=str(e))
+
+data = pd.read_csv("backend/data/heart.csv") 
