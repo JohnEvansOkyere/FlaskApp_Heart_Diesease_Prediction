@@ -31,12 +31,12 @@ yarn-error.log*
 *.egg-info/
 
 # Model files
-*.pkl
+#*.pkl
 *.h5
 *.model
 
 # Data files
-*.csv
+#*.csv
 *.dat
 *.out
 *.pid
