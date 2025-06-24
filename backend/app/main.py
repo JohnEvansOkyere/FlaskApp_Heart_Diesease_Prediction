@@ -59,4 +59,4 @@ async def predict(input_data: HeartDiseaseInput):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-data = pd.read_csv("backend/data/heart.csv") 
+#data = pd.read_csv("backend/data/heart.csv") 
